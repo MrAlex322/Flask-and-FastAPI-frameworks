@@ -10,7 +10,22 @@ def index():
 
 @app.route('/categories')
 def categories():
-    return render_template('categories.html')
+    _categories = [
+        {
+            "title": "Категория 1",
+            "count_positions": "24"
+        },
+        {
+            "title": "Категория 2",
+            "count_positions": "31"
+        },
+        {
+            "title": "Категория 3",
+            "count_positions": "32"
+        }
+    ]
+    context = {'categories': _categories}
+    return render_template('categories.html', **context)
 
 
 @app.route('/about')
